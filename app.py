@@ -39,13 +39,13 @@ def predict():
     # Tentukan rekomendasi berdasarkan hasil prediksi
     recommendation = ""
     if prediction == "tall":
-        recommendation = "Tidak ada rekomendasi khusus, ketinggian sudah diatas rata-rata, sehat selalu."
+        recommendation = "There are no special recommendations, height is above average, always healthy."
     elif prediction == "normal":
-        recommendation = "Tetap jaga tumbuh kembang anak anda dengan mengonsumsi makanan sehat seperti buah buahan lokal pride."
+        recommendation = "Keep your child's growth and development by consuming healthy foods such as local fruits."
     elif prediction == "stunted":
-        recommendation = "Perhatikan asupan gizi anak, pastikan mereka mendapatkan nutrisi yang cukup untuk tumbuh dengan baik."
+        recommendation = "Pay attention to your child's nutritional intake, make sure they get enough nutrition to grow well."
     elif prediction == "severely stunted":
-        recommendation = "Segera konsultasikan dengan dokter atau ahli gizi untuk mendapatkan penanganan lebih lanjut mengenai stunting yang dialami."
+        recommendation = "Immediately consult a doctor or nutritionist to get further treatment regarding the stunting you are experiencing."
 
     # Mengirim hasil prediksi dan rekomendasi ke template
     return render_template("index.html", prediction_text="Your toddler is {}".format(prediction_result), recommendation_text=recommendation)
