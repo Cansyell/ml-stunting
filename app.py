@@ -48,7 +48,9 @@ def predict():
         recommendation = "Immediately consult a doctor or nutritionist to get further treatment regarding the stunting you are experiencing."
 
     # Mengirim hasil prediksi dan rekomendasi ke template
-    return render_template("index.html", prediction_text="Your toddler is {}".format(prediction_result), recommendation_text=recommendation)
+    return render_template("index.html", 
+                           prediction_text="Based on the data you entered (Age: {} Month, Gender: {}, Height: {} cm), your toddler is classified as {}".format(age, "Male" if gender == 0 else "Female", height, prediction_result),
+                           recommendation_text=recommendation)
 
 if __name__ == "__main__":
     app.run(debug=True)
